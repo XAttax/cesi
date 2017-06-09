@@ -2,12 +2,22 @@ package model.organs;
 
 
 public class Stomach implements Organ{
+
+    private Animal animal;
+    private int foodQuantityMax = 10; // Capacité de l'estomac
+    private int foodQuantity = 0; // Nombre d'aliment actuellement dans l'estomac
+    private int digestionSpeed = 1;
+
+    public Stomach(Animal animal) {
+        this.animal = animal;
+    }
+
     /**
      * Return the current food amount in the stomach
      * @return
      */
     public int getCurrentFoodAmount() {
-        throw new UnsupportedOperationException();
+        return this.foodQuantity;
     }
 
     /**
@@ -15,7 +25,7 @@ public class Stomach implements Organ{
      * @return
      */
     public int getMaxFoodAmount() {
-        throw new UnsupportedOperationException();
+        return this.foodQuantityMax;
     }
 
     /**
@@ -23,7 +33,7 @@ public class Stomach implements Organ{
      * @return
      */
     public int getDigestionSpeed() {
-        throw new UnsupportedOperationException();
+        return this.digestionSpeed;
     }
 
     /**
@@ -32,7 +42,7 @@ public class Stomach implements Organ{
      * @return
      */
     public boolean isFull() {
-        throw new UnsupportedOperationException();
+        return this.getCurrentFoodAmount() == this.getMaxFoodAmount();
     }
 
     /**
@@ -40,26 +50,27 @@ public class Stomach implements Organ{
      * @param quantity
      */
     public void fill(int quantity) {
-        throw new UnsupportedOperationException();
+        this.foodQuantity += quantity;
     }
 
     /**
      * Consumes one unit of food.
      */
     public void digest() {
-        throw new UnsupportedOperationException();
+        this.foodQuantity -= this.digestionSpeed;
+        this.animal.setEnergy(this.animal.getEnergy()+this.digestionSpeed);
     }
 
     /**
      * Set the amount of food that this stomach will digest each day
      * @return
      */
-    public void setDigestionSpeed() {
-        throw new UnsupportedOperationException();
+    public void setDigestionSpeed(int quantity) {
+        this.digestionSpeed = quantity;
     }
 
     @Override
     public void spendADay() {
-        throw new UnsupportedOperationException();
+        this.digest(); // L'animal digère tous les jours
     }
 }
