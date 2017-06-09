@@ -32,5 +32,7 @@ public class Brain implements Organ {
     public void setBrainWeight()
     {
         throw new UnsupportedOperationException();
+        this.Weight = Weight;
+
     }
 }
