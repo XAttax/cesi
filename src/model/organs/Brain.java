@@ -28,4 +28,8 @@ public class Brain implements Organ {
     public void setCurrentMood() {
 
     }
+
+    public void setBrainWeight(int Weight) {
+        this.Weight = Weight;
+    }
 }
