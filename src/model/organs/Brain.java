@@ -28,4 +28,9 @@ public class Brain implements Organ {
     public void setCurrentMood() {
 
     }
+
+    public void setBrainWeight()
+    {
+        throw new UnsupportedOperationException();
+    }
 }
