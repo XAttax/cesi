@@ -6,5 +6,8 @@ public enum Mood {
     CHEERFUL,
     DISGUSTED,
     NEUTRAL,
-    SAD
+    SAD,
+    ANGER,
+    CONFUSION,
+    DESIRE
 }
