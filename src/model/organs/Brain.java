@@ -5,8 +5,15 @@ import model.enums.Mood;
 
 public class Brain implements Organ {
 
+
+    private int MentalHealth;
+
     public int getMentalHealth() {
-        throw new UnsupportedOperationException();
+        return MentalHealth;
+    }
+
+    public setMentalHealth(int MentalHeal) {
+        this.MentalHeal = MentalHeal;
     }
 
     @Override
@@ -20,5 +27,10 @@ public class Brain implements Organ {
 
     public void setCurrentMood() {
 
+    }
+
+    public void setBrainWeight(int Weight) {
+        this.Weight = Weight;
+        throw new UnsupportedOperationException();
     }
 }
