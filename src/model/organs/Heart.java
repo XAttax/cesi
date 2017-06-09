@@ -2,20 +2,30 @@ package model.organs;
 
 
 public class Heart implements Organ {
+
+    private int _energy;
+
     public int getEnergyAmount() {
-        throw new UnsupportedOperationException();
+        return _energy;
     }
 
     public void addEnergy(int energyAmount) {
-        throw new UnsupportedOperationException();
+        _energy = energy + energyAmount;
     }
 
     public void removeEnergy(int energyAmount) {
-        throw new UnsupportedOperationException();
+        int reste = _energy - energyAmount;
+
+        if(reste =< 0){
+            isAlive == false;
+        }
+        else{
+            _energy = reste;
+        }
     }
 
     @Override
     public void spendADay() {
-        throw new UnsupportedOperationException();
+        _energy = _energy -1;
     }
 }
