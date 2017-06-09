@@ -3,14 +3,10 @@ package model.organs;
 
 public class Stomach implements Organ{
 
-    private Animal animal;
+    private int energy = 0;
     private int foodQuantityMax = 10; // Capacité de l'estomac
     private int foodQuantity = 0; // Nombre d'aliment actuellement dans l'estomac
     private int digestionSpeed = 1;
-
-    public Stomach(Animal animal) {
-        this.animal = animal;
-    }
 
     /**
      * Return the current food amount in the stomach
@@ -58,7 +54,7 @@ public class Stomach implements Organ{
      */
     public void digest() {
         this.foodQuantity -= this.digestionSpeed;
-        this.animal.setEnergy(this.animal.getEnergy()+this.digestionSpeed);
+       energy += this.digestionSpeed;
     }
 
     /**
